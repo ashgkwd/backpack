@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backbone Modal</title>
+  <meta charset="utf8">
+  <script type="text/javascript" src="underscore-min.js"></script>
+  <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="backbone-min.js"></script>
+  <script type="text/javascript" src="backbone.modal.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+  <style type="text/css">
+  .bbm-modal-container {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+  }
+  .bbm-template-container {
+    position: absolute;
+    z-index: 10002;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0.3em black;
+    background-color: white;
+  }
+  </style>
+</head>
+<body>
+<section>
+  <h1>Control Room</h1>
+  <p>
+    <button id="btn-open">open</button>
+    <button id="btn-close">close</button>
+    <button id="btn-log">log all</button>
+  </p>
+</section>
+
+<section id="i-am-parent" title="sample attribute">
+  <h1>Modal dialog section</h1>
+  <div id="bbm-here">garbage content</div>
+</section>
+
+<section>
+  <h1>Footer part goes here</h1>
+</section>
+
+<script type="underscore/x-template" id="my-modal-template">
+  <section class="user-template">
+    <h1>Here's to the crazy one, the misfit, rebels...</h1>
+    <p> Click on any button visible on this modal</p>
+    <p> <%= paragraph %> </p>
+  </section>
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToolTip Example</title>
+	<meta charset="utf8">
+	<script type="text/javascript" src="../lib/underscore-min.js"></script>
+  <script type="text/javascript" src="../lib/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../lib/backbone-min.js"></script>
+  <script type="text/javascript" src="../modules/backbone.modal.js"></script>
+  <script type="text/javascript" src="../modules/backbone.tooltip.js"></script>
+	<script src="app.js"></script>
+
+	<style type="text/css">
+	.tooltip-container {
+		position: absolute;
+		display: none;
+		/*margin: 10px;*/
+		/*padding: 4px;*/
+		border-radius: 2px;
+		border: 1px solid #ccc;
+		background-color: white;
+		background: linear-gradient(to bottom, white, white 50%, yellow 50%, yellow);
+	}
+	.center {
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+
+<section class='center'>
+	<h1>Tooltip Example</h1>
+	<!-- This can't be part of button.  -->
+	<button id="bbtt-here">Left</button> <hr>
+	<button id="bbtt-here-2">Top</button> <hr>
+	<button id="bbtt-here-3">Bottom</button> <hr>
+	<button id="bbtt-here-4">Right</button> <hr>
+	<h2>This is bottom heading</h2>
+</section>
+
+</body>
+</html>
