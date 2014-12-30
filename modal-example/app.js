@@ -1,4 +1,7 @@
-/*global Backbone, jQuery, _, Modal*/
+/* global Backbone */
+/* global jQuery */
+/* global _ */
+
 (function($){
 
   "use strict";
