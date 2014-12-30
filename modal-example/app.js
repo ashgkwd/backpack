@@ -37,7 +37,7 @@
       onClose: function() {console.log('Modal will be closed. Amazing!');},
     };
 
-    app.myModal = new Modal({model:myData, el:$('#bbm-here')});
+    app.myModal = new Backbone.Modal({model:myData, el:$('#bbm-here')});
 
     $('#btn-open').on('click', function() {
       app.myModal.show();

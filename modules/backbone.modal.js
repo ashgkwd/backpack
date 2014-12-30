@@ -1,6 +1,6 @@
 /*global Backbone, jQuery, $, _ */
 
-var Modal = Backbone.View.extend({
+Backbone.Modal = Backbone.View.extend({
   defaults: {
     width: '400px',
     height: '300px'
