@@ -6,13 +6,13 @@
 
   "use strict";
 
+  var app = app || {};
+
   $(document).ready(function() {
 
     var myData = {
-      // My custom template
+      // Custom template
       template: $('#my-modal-template').html(),
-      // userTemplate: '<p> This is third level nested template! Awesome <b><%= myAwesomeVar %></b> </p>',
-      // userModel: {myAwesomeVar:'Batman'},
 
       // Options for modal height and width
       options: {
@@ -21,7 +21,7 @@
         width: '500px'
       },
 
-      // My custom events. function must be defined here only.
+      // function must be defined here only.
       // It does not support functions declared outside events: property.
       events: {
         'click .confirm': function() {
