@@ -1,8 +1,10 @@
 /*global Backbone, jQuery, _, Modal*/
-$(document).ready(function(){
-  var app = app || {};
+(function($){
 
-  (function($){
+  "use strict";
+
+  $(document).ready(function() {
+
     var myData = {
       // My custom template
       template: $('#my-modal-template').html(),
@@ -43,5 +45,7 @@ $(document).ready(function(){
     $('#btn-log').on('click', function() {
       console.log(myData, app.myModal, $('#bbm-here').html());
     });
-  })(jQuery);
-});
+
+  });
+
+})(jQuery);

@@ -9,7 +9,7 @@ var Modal = Backbone.View.extend({
   defaultTemplates: {
     // Default template for confirmation box.
     confirm: '<section class="default-template template-confirm"><div><%= userTemplate %></div></section>'+
-      '<section class="button-box">' + 
+      '<section class="button-box">' +
       '<button class="confirm">Confirm</button><button class="cancel">Cancel</button>' +
       '</section>',
 
