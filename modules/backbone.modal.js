@@ -34,7 +34,8 @@
   Backbone.Modal = Backbone.View.extend({
     defaults: {
       width : '400px',
-      height : '300px'
+      height : '300px',
+      events : {}
     },
 
     // It initializes module with the template options and dynamically creates
@@ -62,6 +63,11 @@
       // Assign the programatically creatd DOM to $el to which Backbone can
       // attach events
       this.$el = modalContainer;
+
+      // Extend event object with close button event
+      this.events = _.extend(this.events, {
+        'click .bbm-close-button' : 'hide'
+      });
     },
 
     // Compiles the final template and attaches it to the modal
@@ -94,15 +100,15 @@
     // Makes the modal visible and attaches the events
     show: function() {
       this.render();
-      this.delegateEvents(this.options.events);
+      this.delegateEvents(this.events);
       this.$el.addClass('visible').trigger('modal-open');
     },
 
     // Makes the modal invisible and detaches the events to prevent from
     // event bubbling
     hide: function() {
+      this.$el.trigger('modal-close').removeClass('visible');
       this.undelegateEvents();
-      this.$el.removeClass('visible').trigger('modal-close');
     }
   });
 
