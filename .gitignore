@@ -1,0 +1,11 @@
+# Node Modules
+node_modules
+
+# NO CSS because of LESS
+css
+
+# Application specific files and directories
+build/
+
+# Sublime Text related files
+*.sublime*
