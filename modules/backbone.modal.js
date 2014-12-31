@@ -1,4 +1,3 @@
-/*global Backbone, jQuery, $, _ */
 
 Backbone.Modal = Backbone.View.extend({
   defaults: {
@@ -49,6 +48,9 @@ Backbone.Modal = Backbone.View.extend({
         break;
       default:
         finalTemplate = ut;
+/* global Backbone */
+/* global $ */
+/* global _ */
     }
 
     var parentTemplate = '<div id="<%= modalId %>" class="bbm-modal-container">' +

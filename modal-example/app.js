@@ -1,8 +1,8 @@
 /* global Backbone */
-/* global jQuery */
+/* global $ */
 /* global _ */
 
-(function($){
+(function(){
 
   "use strict";
 
@@ -51,4 +51,4 @@
 
   });
 
-})(jQuery);
+})();
