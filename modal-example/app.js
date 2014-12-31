@@ -40,9 +40,6 @@
     $('#btn-close').on('click', function() {
       app.myModal.hide();
     });
-    $('#btn-log').on('click', function() {
-      console.log(myData, app.myModal, $('#bbm-here').html());
-    });
 
   });
 
