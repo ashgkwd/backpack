@@ -6,6 +6,7 @@
 
   "use strict";
 
+  // Template used for Confirmation Dialog
   var confirmTemplate =
     '<section class="default-template template-confirm">'+
       '<div><%= userTemplate %></div>'+
@@ -15,12 +16,14 @@
       '<button class="cancel">Cancel</button>' +
     '</section>';
 
+  // Template used for Notification
   var notifyTemplate =
     '<section class="default-template template-notify">' +
       '<div><%= userTemplate %></div>' +
     '</section>' +
     '<section class="button-box"><button class="okay">OK</button></section>';
 
+  // Container for the Modal
   var parentTemplate =
     '<div id="<%= templateId %>" class="bbm-template-container" ' +
       'style="height:<%= height %>; width:<%= width %>;">' +
@@ -34,6 +37,8 @@
       height : '300px'
     },
 
+    // It initializes module with the template options and dynamically creates
+    // an unique modal container which is used as $el
     initialize: function(args) {
       var modalContainer;
 
@@ -48,14 +53,18 @@
         content : {}
       };
 
+      // Creates a new DOM of the modal and add it to body
       modalContainer = $('<div>').attr('id', this.templateOptions.modalId)
         .addClass('bbm-modal-container');
 
       $('body').prepend(modalContainer);
 
+      // Assign the programatically creatd DOM to $el to which Backbone can
+      // attach events
       this.$el = modalContainer;
     },
 
+    // Compiles the final template and attaches it to the modal
     render: function() {
       var finalTemplate;
 
@@ -82,12 +91,15 @@
       return this;
     },
 
+    // Makes the modal visible and attaches the events
     show: function() {
       this.render();
       this.delegateEvents(this.options.events);
       this.$el.addClass('visible').trigger('modal-open');
     },
 
+    // Makes the modal invisible and detaches the events to prevent from
+    // event bubbling
     hide: function() {
       this.undelegateEvents();
       this.$el.removeClass('visible').trigger('modal-close');
