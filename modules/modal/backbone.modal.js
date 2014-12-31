@@ -8,33 +8,35 @@
 
   // Template used for Confirmation Dialog
   var confirmTemplate =
-    '<section class="default-template template-confirm">'+
+    '<section>'+
       '<div><%= userTemplate %></div>'+
     '</section>' +
-    '<section class="button-box">' +
+    '<section class="bb-modal-bottombar">' +
       '<button class="confirm">Confirm</button>' +
       '<button class="cancel">Cancel</button>' +
     '</section>';
 
   // Template used for Notification
   var notifyTemplate =
-    '<section class="default-template template-notify">' +
+    '<section>' +
       '<div><%= userTemplate %></div>' +
     '</section>' +
-    '<section class="button-box"><button class="okay">OK</button></section>';
+    '<section class="button-box">' +
+      '<button class="okay">OK</button>' +
+    '</section>';
 
   // Container for the Modal
   var parentTemplate =
-    '<div id="<%= templateId %>" class="bbm-template-container" ' +
+    '<div id="<%= templateId %>" class="bb-modal-template" ' +
       'style="height:<%= height %>; width:<%= width %>;">' +
-        '<button class="bbm-close-button" id="<%= closeButtonId %>"> Close </button>' +
+        '<button class="bb-modal-close"> Close </button>' +
           '<%= content %>' +
     '</div>';
 
   Backbone.Modal = Backbone.View.extend({
     defaults: {
-      width : '400px',
-      height : '300px',
+      width : '500px',
+      height : '200px',
       events : {}
     },
 
@@ -46,9 +48,8 @@
       this.options = _.extend({}, this.defaults, args);
 
       this.templateOptions = {
-        modalId : _.uniqueId('bbm-modal-container-'),
-        templateId : _.uniqueId('bbm-template-container-'),
-        closeButtonId : _.uniqueId('bbm-close-button-'),
+        modalId : _.uniqueId('bb-modal-'),
+        templateId : _.uniqueId('bb-template-'),
         height : this.options.height,
         width : this.options.width,
         content : {}
@@ -56,7 +57,7 @@
 
       // Creates a new DOM of the modal and add it to body
       modalContainer = $('<div>').attr('id', this.templateOptions.modalId)
-        .addClass('bbm-modal-container');
+        .addClass('bb-modal');
 
       $('body').prepend(modalContainer);
 
@@ -66,7 +67,7 @@
 
       // Extend event object with close button event
       this.events = _.extend(this.events, {
-        'click .bbm-close-button' : 'hide'
+        'click .bb-modal-close' : 'hide'
       });
     },
 
