@@ -19,6 +19,10 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.7);
+    visibility: hidden;
+  }
+  .bbm-modal-container.visible {
+    visibility: visible;
   }
   .bbm-template-container {
     position: absolute;
@@ -54,7 +58,6 @@
   <section class="user-template">
     <h1>Here's to the crazy one, the misfit, rebels...</h1>
     <p> Click on any button visible on this modal</p>
-    <p> <%= paragraph %> </p>
   </section>
 </script>
 </body>

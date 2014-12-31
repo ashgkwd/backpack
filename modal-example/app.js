@@ -11,33 +11,28 @@
   $(document).ready(function() {
 
     var myData = {
-      // Custom template
-      template: $('#my-modal-template').html(),
+      type : 'confirm',
+      height : '400px',
+      width : '500px',
 
-      // Options for modal height and width
-      options: {
-        type: 'notify',
-        height: '400px',
-        width: '500px'
-      },
+      template : $('#my-modal-template').html(), // Customizable template
 
       // function must be defined here only.
       // It does not support functions declared outside events: property.
-      events: {
-        'click .confirm': function() {
-          console.log('User clicked on confirm button');
+      events : {
+        'click .confirm' : function(ev) {
+          console.log('Clicked on Confirm', ev);
+        },
+        'modal-open' : function (ev) {
+          console.log('Modal is opened', ev);
+        },
+        'modal-close' : function(ev) {
+          console.log('Modal is closed', ev);
         }
       },
-
-      // template will use following custom properties.
-      paragraph: 'This should go in my p tag!',
-
-      // Default functions onOpen, onClose.
-      onOpen: function() {console.log('Modal is opened. Cheers!');},
-      onClose: function() {console.log('Modal will be closed. Amazing!');},
     };
 
-    app.myModal = new Backbone.Modal({model:myData, el:$('#bbm-here')});
+    app.myModal = new Backbone.Modal(myData);
 
     $('#btn-open').on('click', function() {
       app.myModal.show();
