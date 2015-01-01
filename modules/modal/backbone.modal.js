@@ -102,13 +102,15 @@
     show: function() {
       this.render();
       this.delegateEvents(this.events);
-      this.$el.addClass('visible').trigger('modal-open');
+      this.$el.addClass('visible').trigger('modal-open')
+        .find('.bb-modal-template').addClass('visible');
     },
 
     // Makes the modal invisible and detaches the events to prevent from
     // event bubbling
     hide: function() {
-      this.$el.trigger('modal-close').removeClass('visible');
+      this.$el.trigger('modal-close').removeClass('visible')
+        .find('.bb-modal-template').removeClass('visible');
       this.undelegateEvents();
     }
   });
