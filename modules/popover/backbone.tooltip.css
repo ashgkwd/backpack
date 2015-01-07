@@ -1,38 +1,40 @@
 .bb-tooltip {
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 10003;
-  }
-  .bb-tooltip-container {
-    margin: 5px;
-  }
-  .bb-tooltip-arrow {
-    position: absolute;
-    height: 0;
-    width: 0;
-    line-height: 0; 
-    border: 5px dashed #000; 
-  }
-  .bb-arrow-bottom {
-    top: 0px; 
-    left: 50%; 
-    margin-left: -5px;
-    border-bottom-style: solid; 
-    border-top: none; 
-    border-left-color: transparent; 
-    border-right-color: transparent;
-  }
-  .bb-arrow-top {
-    bottom: 0; left: 50%; margin-left: -5px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent;
-  }
-  .bb-arrow-right {
-    left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent;
-  }
-  .bb-arrow-left {
-    right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent;
-  }
-  .visible {
-    visibility: visible;
-    opacity: 1;
-  }
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10003;
+}
+.bb-tooltip-container {
+  margin: 5px;
+}
+
+/* Taken from Tipsy */
+.bb-tooltip-arrow {
+  position: absolute;
+  height: 0;
+  width: 0;
+  line-height: 0; 
+  border: 5px dashed #000; 
+}
+.bb-arrow-bottom {
+  top: 0px; 
+  left: 50%; 
+  margin-left: -5px;
+  border-bottom-style: solid; 
+  border-top: none; 
+  border-left-color: transparent; 
+  border-right-color: transparent;
+}
+.bb-arrow-top {
+  bottom: 0; left: 50%; margin-left: -5px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent;
+}
+.bb-arrow-right {
+  left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent;
+}
+.bb-arrow-left {
+  right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent;
+}
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
