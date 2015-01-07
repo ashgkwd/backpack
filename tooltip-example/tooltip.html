@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ToolTip Example</title>
+	<title>Tooltip Example</title>
 	<meta charset="utf8">
-	<script type="text/javascript" src="../lib/underscore-min.js"></script>
-  <script type="text/javascript" src="../lib/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="../lib/backbone-min.js"></script>
-  <script type="text/javascript" src="../modules/backbone.modal.js"></script>
-  <script type="text/javascript" src="../modules/backbone.tooltip.js"></script>
+	<script type="text/javascript" src="../lib/underscore.js"></script>
+  <script type="text/javascript" src="../lib/jquery-2.1.3.js"></script>
+  <script type="text/javascript" src="../lib/backbone.js"></script>
+  <script type="text/javascript" src="../modules/modal/backbone.modal.js"></script>
+  <script type="text/javascript" src="../modules/popover/backbone.tooltip.js"></script>
 	<script src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="../modules/popover/backbone.tooltip.css">
 
 	<style type="text/css">
-	.tooltip-container {
-		position: absolute;
-		display: none;
-		/*margin: 10px;*/
-		/*padding: 4px;*/
-		border-radius: 2px;
-		border: 1px solid #ccc;
-		background-color: white;
-		background: linear-gradient(to bottom, white, white 50%, yellow 50%, yellow);
-	}
+	.bb-tooltip-container {
+    padding: 3px;
+    box-shadow: 0 0 0.3em black;
+    border-radius: 2px;
+    font-size: small;
+    /*line-height: 1em;*/
+    font-family: sans-serif;
+    background-color: black;
+    color: white;
+  }
 	.center {
 		text-align: center;
+	}
+	button {
+		padding: 15px;
+		margin: 10px;
 	}
 	</style>
 </head>
@@ -30,12 +35,11 @@
 
 <section class='center'>
 	<h1>Tooltip Example</h1>
-	<!-- This can't be part of button.  -->
-	<button id="bbtt-here">Left</button> <hr>
-	<button id="bbtt-here-2">Top</button> <hr>
-	<button id="bbtt-here-3">Bottom</button> <hr>
-	<button id="bbtt-here-4">Right</button> <hr>
-	<h2>This is bottom heading</h2>
+	<button id="example-left">Left</button>
+	<button id="example-top">Top</button>
+	<button id="example-bottom">Bottom</button>
+	<button id="example-right">Right</button>
+	<h2>Hover to see tooltip</h2>
 </section>
 
 </body>

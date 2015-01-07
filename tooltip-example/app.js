@@ -1,46 +1,57 @@
-/*global Backbone, jQuery, _, Modal*/
-$(document).ready(function(){
+/* global Backbone */
+/* global $ */
+/* global _ */
+
+(function() {
   var app = app || {};
-
-  (function($) {
-    var toolTipData = {
-      template: '<div> <h1>The Title</h1> <p> Body of tooltip </p> </div>',
-      placement: 'left',
-      options: {
-      	width: '275px',
-      	height: '140px'
-      },
-
-      // Default functions onOpen, onClose.
-      onOpen: function() {console.log('ToolTip is opened. Cheers!');},
-      onClose: function() {console.log('ToolTip will be closed. Amazing!');},
+  var tooltipData = {
+    template: 'This is tooltip with <%= placement %> placement',
+    placement: 'left',
+    events: {
+      'click .button-close': 'hide'
     }
+  };
 
-    app.myLeft = new ToolTip({model: toolTipData, el:$('#bbtt-here')});
-    toolTipData.placement = 'top';
-    app.myTop = new ToolTip({model: toolTipData, el:$('#bbtt-here-2')});
+  $(document).ready(function() {
+    tooltipData.placement = 'left';
+    tooltipData.trigger = $('#example-left');
+    app.myLeft = new Backbone.Tooltip(tooltipData);
 
-    toolTipData.placement = 'bottom';
-    app.myBottom = new ToolTip({model: toolTipData, el:$('#bbtt-here-3')});
+    tooltipData.placement = 'top';
+    tooltipData.trigger = $('#example-top');
+    app.myTop = new Backbone.Tooltip(tooltipData);
 
-    toolTipData.placement = 'right';
-    app.myRight = new ToolTip({model: toolTipData, el:$('#bbtt-here-4')});
+    tooltipData.placement = 'bottom';
+    tooltipData.trigger = $('#example-bottom');
+    app.myBottom = new Backbone.Tooltip(tooltipData);
 
-    $('#bbtt-here').on('click', function() {
-    	app.myLeft.show();
+    tooltipData.placement = 'right';
+    tooltipData.trigger = $('#example-right');
+    app.myRight = new Backbone.Tooltip(tooltipData);
+
+    $('#example-left').on('mouseenter', function() {
+      app.myLeft.show();
+    }).on('mouseleave', function() {
+      app.myLeft.hide();
     });
 
-    $('#bbtt-here-2').on('click', function() {
-    	app.myTop.show();
+    $('#example-top').on('mouseenter', function() {
+      app.myTop.show();
+    }).on('mouseleave', function() {
+      app.myTop.hide();
     });
 
-    $('#bbtt-here-3').on('click', function() {
-    	app.myBottom.show();
+    $('#example-bottom').on('mouseenter', function() {
+      app.myBottom.show();
+    }).on('mouseleave', function() {
+      app.myBottom.hide();
     });
 
-    $('#bbtt-here-4').on('click', function() {
-    	app.myRight.show();
+    $('#example-right').on('mouseenter', function() {
+      app.myRight.show();
+    }).on('mouseleave', function() {
+      app.myRight.hide();
     });
+  });
+})();
 
-  })(jQuery);
-});
