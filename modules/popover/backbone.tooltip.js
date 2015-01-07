@@ -40,8 +40,6 @@
       left = leftOffset + outerWidth;
     }
 
-    console.log('w h', width, height, 'lO, tO', leftOffset, topOffset, 'oW, oH', outerWidth, outerHeight, 't, l', top, left);
-    // return {top: 100, left: 100};
     return {top: parseInt(top), left: parseInt(left)};
   };
 
