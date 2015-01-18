@@ -14,19 +14,19 @@
 
   $(document).ready(function() {
     tooltipData.placement = 'left';
-    tooltipData.trigger = $('#example-left');
+    tooltipData.triggerEl = $('#example-left');
     app.myLeft = new Backbone.Tooltip(tooltipData);
 
     tooltipData.placement = 'top';
-    tooltipData.trigger = $('#example-top');
+    tooltipData.triggerEl = $('#example-top');
     app.myTop = new Backbone.Tooltip(tooltipData);
 
     tooltipData.placement = 'bottom';
-    tooltipData.trigger = $('#example-bottom');
+    tooltipData.triggerEl = $('#example-bottom');
     app.myBottom = new Backbone.Tooltip(tooltipData);
 
     tooltipData.placement = 'right';
-    tooltipData.trigger = $('#example-right');
+    tooltipData.triggerEl = $('#example-right');
     app.myRight = new Backbone.Tooltip(tooltipData);
 
     $('#example-left').on('mouseenter', function() {

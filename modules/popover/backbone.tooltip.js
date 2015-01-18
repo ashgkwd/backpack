@@ -14,10 +14,10 @@
   var getOffset = function(options) {
     var width = options.width;
     var height = options.height;
-    var leftOffset = options.trigger.offset().left;
-    var topOffset = options.trigger.offset().top;
-    var outerWidth = options.trigger.outerWidth();
-    var outerHeight = options.trigger.outerHeight();
+    var leftOffset = options.triggerEl.offset().left;
+    var topOffset = options.triggerEl.offset().top;
+    var outerWidth = options.triggerEl.outerWidth();
+    var outerHeight = options.triggerEl.outerHeight();
     var top = 0;
     var left = 0;
 
@@ -48,15 +48,17 @@
   // public:
   Backbone.Tooltip = Backbone.View.extend({
     defaults: {
-      placement: 'top',
-      trigger: null
+      placement : 'top',
+      triggerEl : null,
+      events : {}
     },
 
     initialize: function(args) {
       var tip;
+      var thisref = this;
 
       this.options = _.extend({}, this.defaults, args);
-      if(this.options.trigger == null) {
+      if(this.options.triggerEl === null) {
         throw "No Trigger Element Specified";
       }
 
