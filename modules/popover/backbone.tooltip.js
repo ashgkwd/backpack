@@ -2,11 +2,13 @@
 /* global $ */
 /* global _ */
 
-(function(){
+(function() {
+
   "use strict";
 
   // private:
-  var tooltipTemplate = '<div class="bb-tooltip-arrow <%= "bb-arrow-" + placement %>"></div>' +
+  var tooltipTemplate =
+    '<div class="bb-tooltip-arrow <%= "bb-arrow-" + placement %>"></div>' +
     '<div class="bb-tooltip-container"></div>';
 
   var getOffset = function(options) {
@@ -40,7 +42,7 @@
       left = leftOffset + outerWidth;
     }
 
-    return {top: parseInt(top), left: parseInt(left)};
+    return { top: parseInt(top), left: parseInt(left) };
   };
 
   // public:
@@ -60,9 +62,7 @@
 
       this.tooltipId = _.uniqueId("bb-tooltip-");
 
-      tip = $('<div>').attr('id', this.tooltipId)
-        .addClass('bb-tooltip');
-
+      tip = $('<div>').attr('id', this.tooltipId).addClass('bb-tooltip');
       $('body').prepend(tip);
       this.$el = tip;
     },
@@ -75,6 +75,7 @@
       this.options.height = this.$el.outerHeight();
       this.options.width = this.$el.outerWidth();
       this.$el.offset(getOffset(this.options));
+
       return this;
     },
 
@@ -83,6 +84,7 @@
       this.delegateEvents(this.events);
       this.$el.addClass('visible').trigger('tooltip-show')
         .find('.bb-tooltip-template').addClass('visible');
+
       return this;
     },
 
@@ -90,8 +92,8 @@
       this.$el.trigger('tooltip-hide').removeClass('visible')
         .find('.bb-tooltip-template').removeClass('visible');
       this.undelegateEvents();
+
       return this;
     }
-
   });
 })();
