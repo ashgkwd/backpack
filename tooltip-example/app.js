@@ -5,7 +5,7 @@
 (function() {
   var app = app || {};
   var tooltipData = {
-    template: 'This is tooltip with <%= placement %> placement',
+    template: 'This is a tooltip with <%= placement %> placement',
     placement: 'left',
   };
 
