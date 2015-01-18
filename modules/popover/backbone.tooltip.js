@@ -67,6 +67,9 @@
       tip = $('<div>').attr('id', this.tooltipId).addClass('bb-tooltip');
       $('body').prepend(tip);
       this.$el = tip;
+
+      this.options.triggerEl.hover(function (ev) { thisref.show(); },
+        function (ev) { thisref.hide(); });
     },
 
     render: function() {

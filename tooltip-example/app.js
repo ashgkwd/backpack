@@ -7,9 +7,6 @@
   var tooltipData = {
     template: 'This is tooltip with <%= placement %> placement',
     placement: 'left',
-    events: {
-      'click .button-close': 'hide'
-    }
   };
 
   $(document).ready(function() {
@@ -28,30 +25,5 @@
     tooltipData.placement = 'right';
     tooltipData.triggerEl = $('#example-right');
     app.myRight = new Backbone.Tooltip(tooltipData);
-
-    $('#example-left').on('mouseenter', function() {
-      app.myLeft.show();
-    }).on('mouseleave', function() {
-      app.myLeft.hide();
-    });
-
-    $('#example-top').on('mouseenter', function() {
-      app.myTop.show();
-    }).on('mouseleave', function() {
-      app.myTop.hide();
-    });
-
-    $('#example-bottom').on('mouseenter', function() {
-      app.myBottom.show();
-    }).on('mouseleave', function() {
-      app.myBottom.hide();
-    });
-
-    $('#example-right').on('mouseenter', function() {
-      app.myRight.show();
-    }).on('mouseleave', function() {
-      app.myRight.hide();
-    });
   });
 })();
-
