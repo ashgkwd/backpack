@@ -56,6 +56,7 @@
     initialize: function(args) {
       var tip;
       var thisref = this;
+      this.isShown = false
 
       this.options = _.extend({}, this.defaults, args);
       if(this.options.triggerEl === null) {
@@ -85,6 +86,7 @@
     },
 
     show: function() {
+      this.isShown = true;
       this.render();
       this.delegateEvents(this.events);
       this.$el.addClass('visible').trigger('tooltip-show')
@@ -94,6 +96,7 @@
     },
 
     hide: function() {
+      this.isShown = false;
       this.$el.trigger('tooltip-hide').removeClass('visible')
         .find('.bb-tooltip-template').removeClass('visible');
       this.undelegateEvents();
