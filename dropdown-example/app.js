@@ -5,15 +5,13 @@
 (function() {
   var app = app || {};
   var dropdownData = {
-    template: 'This is a Popover with <%= placement %> placement',
-    placement: 'left',
+    template: '<div class="item"> First Item </div>' +
+      '<div class="item"> Second Item </div>' +
+      '<div class="item"> Third Item </div>',
+    placement: 'top',
   };
 
   $(document).ready(function() {
-    // dropdownData.placement = 'left';
-    // dropdownData.triggerEl = $('#example-left');
-    // app.myLeft = new Backbone.Dropdown(dropdownData);
-
     dropdownData.placement = 'top';
     dropdownData.triggerEl = $('#example-top');
     app.myTop = new Backbone.Dropdown(dropdownData);
@@ -22,8 +20,8 @@
     dropdownData.triggerEl = $('#example-bottom');
     app.myBottom = new Backbone.Dropdown(dropdownData);
 
-    // dropdownData.placement = 'right';
-    // dropdownData.triggerEl = $('#example-right');
-    // app.myRight = new Backbone.Dropdown(dropdownData);
+    dropdownData.placement = 'right';
+    dropdownData.triggerEl = $('#example-not');
+    app.myRight = new Backbone.Dropdown(dropdownData);
   });
 })();

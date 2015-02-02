@@ -18,19 +18,16 @@
       Backbone.Popover.prototype.initialize.call(this, args);
       var thisref = this;
 
-      // re position for left offset, adjust arrow
-
       // dropdown can open down (default) or up (optional)
       // but it can never be right or left
-
-      // it has backdrop. onclick backdrop, dropdown closes
-
+      if (!(this.options.placement == "top" || this.options.placement == "bottom"))
+        this.options.placement = "bottom";
     },
 
     render: function() {
       Backbone.Popover.prototype.render.call(this);
       this.$el.offset(adjustOffset(this.options));
-      this.$el.find('.bb-tooltip-arrow').css('left', '10%');
+      this.$el.find('.bb-tooltip-arrow').css('left', '15%');
 
       return this;
     }
