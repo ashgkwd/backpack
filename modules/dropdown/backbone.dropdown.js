@@ -40,6 +40,15 @@
     show: function() {
       Backbone.Popover.prototype.show.call(this);
       this.$el.focus();
+    },
+
+    hide: function() {
+      Backbone.Popover.prototype.hide.call(this);
+      this.isShown = true;
+      var thisref = this;
+      setTimeout(function() {
+        thisref.isShown = false;
+      }, 100);
     }
   })
 })();
