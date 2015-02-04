@@ -65,7 +65,8 @@
 
       this.tooltipId = _.uniqueId("bb-tooltip-");
 
-      tip = $('<div>').attr('id', this.tooltipId).addClass('bb-tooltip');
+      // tabindex='0' will make element focusable
+      tip = $('<div>').attr('id', this.tooltipId).attr('tabindex', '0').addClass('bb-tooltip');
       $('body').prepend(tip);
       this.$el = tip;
 
