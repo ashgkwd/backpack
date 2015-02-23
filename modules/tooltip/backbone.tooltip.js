@@ -56,7 +56,7 @@
     initialize: function(args) {
       var tip;
       var thisref = this;
-      this.isShown = false
+      this.isShown = false;
 
       this.options = _.extend({}, this.defaults, args);
       if(this.options.triggerEl === null) {
