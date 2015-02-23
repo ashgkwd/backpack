@@ -15,8 +15,8 @@
   // public:
   Backbone.Dropdown = Backbone.Popover.extend({
     initialize: function(args) {
-      Backbone.Popover.prototype.initialize.call(this, args);
       var thisref = this;
+      Backbone.Dropdown.__super__.initialize.call(this, args);
 
       this.$el.on('focusout', function() {
         thisref.hide();
@@ -29,8 +29,7 @@
     },
 
     render: function() {
-      Backbone.Popover.prototype.render.call(this);
-
+      Backbone.Dropdown.__super__.render.call(this);
       this.$el.offset(adjustOffset(this.options))
         .find('.bb-tooltip-arrow').css('left', '15%');
 
@@ -38,18 +37,16 @@
     },
 
     show: function() {
-      Backbone.Popover.prototype.show.call(this);
+      Backbone.Dropdown.__super__.show.call(this);
       this.$el.focus();
     },
 
     hide: function() {
       var thisref = this;
 
-      Backbone.Popover.prototype.hide.call(this);
+      Backbone.Dropdown.__super__.hide.call(this);
       this.isShown = true;
-      setTimeout(function() {
-        thisref.isShown = false;
-      }, 100);
+      setTimeout(function() { thisref.isShown = false; }, 100);
     }
   });
 })();
