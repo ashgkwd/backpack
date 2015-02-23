@@ -30,7 +30,7 @@
 
     render: function() {
       Backbone.Popover.prototype.render.call(this);
-      
+
       this.$el.offset(adjustOffset(this.options))
         .find('.bb-tooltip-arrow').css('left', '15%');
 
@@ -43,12 +43,13 @@
     },
 
     hide: function() {
+      var thisref = this;
+
       Backbone.Popover.prototype.hide.call(this);
       this.isShown = true;
-      var thisref = this;
       setTimeout(function() {
         thisref.isShown = false;
       }, 100);
     }
-  })
+  });
 })();
